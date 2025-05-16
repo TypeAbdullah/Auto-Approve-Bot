@@ -8,5 +8,6 @@ class Config:
     CHID = int(getenv("CHID", "-1002402827530"))
     SUDO = list(map(int, getenv("SUDO").split()))
     MONGO_URI = getenv("MONGO_URI", "mongodb+srv://AYU:AYU@cluster0.vdo5az0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-    
+    PORT = getenv("PORT", "8080")
+
 cfg = Config()
