@@ -1,0 +1,12 @@
+services:
+  - type: worker   # Critical! Telegram bots need a worker (not "web" service)
+    name: telegram-approve-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python3 bot.py  # Replace with your script name (e.g., bot.py)
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false  # Manually set in Render Dashboard
+      # Add other secrets (e.g., database, API keys):
+      # - key: YOUR_OTHER_KEY
+      #   sync: false
